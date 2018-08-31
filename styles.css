@@ -7,14 +7,14 @@ img {
 
 .wallpaper {
   max-width: 100%;
-  margin-top: 30px;
+  margin-top: -8px;
   background-size: cover;
   display: inline-block;
   position: absolute;
   left: -15px;
 }
 
-.sign_in_register{
+.sign_in_register {
   top: 55px;
   right: 160px;
   position: relative;
@@ -27,7 +27,7 @@ img {
   height: 30px;
   width: 30px;
   position: relative;
-  padding:1px;
+  padding: 1px;
   margin-left: 20px;
 }
 
@@ -36,7 +36,7 @@ img {
   height: 30px;
   position: relative;
   width: 30px;
-  padding:1px;
+  padding: 1px;
   margin-left: 20px;
 }
 
@@ -60,21 +60,31 @@ img {
 .tagline_icon {
   width: 270px;
   height: 50px;
-  
 }
 
 .header {
   color: #000000;
   padding-bottom: 10px;
   position: absolute;
-  right: -1px;
   font-family: NOTHSSansNo2-Regular;
-  width:234.328px;
-  height: auto;
-  margin-top: -6px;
+  right: -70px;
+  width: 300.328px;
   top: -26px;
-
+  margin-top: 14px;
+  font-family: "NOTHS Sans No2 Regular";
 }
+
+.links {
+  height: 10px;
+  width: 160px;
+  position: relative;
+  display: inline-block;
+  margin-right: -40px;
+  top: -5px;
+  font-size: 13px;
+  text-decoration-color: rgb(85, 85, 85);
+}
+
 a:link {
   color: black;
   text-decoration: none;
@@ -109,7 +119,9 @@ a:visited {
   font-family: "Helvetica Neue";
   font-size: 14px;
   font-weight: 400;
-  margin: -2px;
+  margin: -3px;
+  font-family: "NOTHS Sans No2 Regular";
+  padding-left: 10px;
 }
 
 .gc-navigation {
@@ -127,9 +139,11 @@ li {
   float: left;
   margin: 9.5px;
   margin-bottom: 2px;
-  font-weight: 20px;
-  font-size: 15px;
-  font-family: "Helvetica Neue";
+  font-weight: 800px;
+  font-size: 14px;
+  text-decoration-color: rgb(85, 85, 85);
+  font-family: "NOTHS Sans No2 Semi Bold";
+  
 }
 .search_dropdown {
   width: 211px;
@@ -148,16 +162,17 @@ li {
   font-size: 14px;
   font-weight: 400;
   margin: -2px;
+  font-family: "NOTHS Sans No2 Regular";
 }
+
 .global_component {
   max-width: 960px;
-  width: 920px;
-  height: 105px;
   padding: 12px 20px 0;
   margin: 0 auto;
   position: relative;
   border-top: 3px solid #056582;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
+  margin-top: -8px;
 }
 .search_form_container {
   width: 455px;
@@ -181,4 +196,7 @@ li {
   border-top-left-radius: 3px;
   margin: 0px 10px 10px 10px;
   border: 1px solid #000000;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: "NOTHS Sans No2 Regular";
 }
