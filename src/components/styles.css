@@ -22,23 +22,7 @@ img {
   margin-left: 20px;
 }
 
-.favourites_icon {
-  top: 15px;
-  height: 30px;
-  width: 30px;
-  position: relative;
-  padding: 1px;
-  margin-left: 20px;
-}
 
-.shopping_icon {
-  top: 15px;
-  height: 30px;
-  position: relative;
-  width: 30px;
-  padding: 1px;
-  margin-left: 20px;
-}
 
 .logo_image {
   height: 98.09px;
@@ -67,9 +51,9 @@ img {
   padding-bottom: 10px;
   position: absolute;
   font-family: NOTHSSansNo2-Regular;
-  right: -70px;
   width: 300.328px;
-  top: -26px;
+  right: -80px;
+  top: -6px;
   margin-top: 14px;
   font-family: "NOTHS Sans No2 Regular";
 }
@@ -77,10 +61,9 @@ img {
 .links {
   height: 10px;
   width: 160px;
+  top: -4px;
   position: relative;
   display: inline-block;
-  margin-right: -40px;
-  top: -5px;
   font-size: 13px;
   text-decoration-color: rgb(85, 85, 85);
 }
@@ -127,12 +110,40 @@ a:visited {
 .gc-navigation {
   width: 960px;
   height: 39px;
+  margin-left: 230px;
+}
+
+.shopping_basket {
+  fill: transparent;
+  width: 20.55px;
+  height: 18.66px;
+  stroke: #555;
+  stroke-width: 7px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: inline-block;
+}
+
+.favourites_icon {
+  fill: transparent;
+  width: 25.55px;
+  height: 20.66px;
+  stroke: #555;
+  stroke-width: 7px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: inline-block;
+  margin-right:25px;
+  margin-left:-35px;
 }
 
 .gc-navigation-items {
   display: block;
   list-style: none;
   text-transform: uppercase;
+  font-weight: 800;
+  color: #555;
+  position: relative;
 }
 
 li {
