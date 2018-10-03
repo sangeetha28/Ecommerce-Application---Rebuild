@@ -19,9 +19,9 @@ export default class Home extends PureComponent {
   }
 
   client = contentful.createClient({
-    space: "xxxx",
+    space: "xgvdxmsp3fa7",
     accessToken:
-      "xxxxx"
+      "4d07a6dbb3c2204f84852a43934645124a3e5daa23f88fcff9f32b85543bb759"
   });
 
   fetchResponse = () => this.client.getEntry("4ULf0MEMZqUYsCi6g4yEUs");
@@ -40,6 +40,8 @@ export default class Home extends PureComponent {
     if (!page) return null; // DO NOT UNDERSTAND THIS LINE
     return (
       <div>
+        <Header />
+        <Navigation />
         <S.Homepage>
           <S.MainBanner
             imageDesktop={page.mainBanner.fields.bannerLinkImage}
