@@ -1,8 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App.js";
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from "react-redux";
 import { createStore } from "redux";
+import { ecomm } from './Redux/reducers';
+import App from "./App.js";
 
-//const store = createStore(noths);
-ReactDOM.render(<App />, document.getElementById("root"));
+
+const store = createStore(ecomm);
+
+ReactDOM.render(
+     (<Provider store={store}>
+     <BrowserRouter>
+       <App />
+     </BrowserRouter>
+     </Provider>)
+    , document.getElementById("root"));

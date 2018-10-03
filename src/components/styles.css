@@ -14,6 +14,29 @@ img {
   left: -15px;
 }
 
+.curated__collection {
+  width: 960px;
+  height: 39px;
+  position: relative;
+}
+
+.cat__ttl-section {
+  display: inline;
+  position: relative;
+  text-align: center;
+  font-family: "NOTHS Sans No2 SemiBold","Helvetica Neue",HelveticaNeue,Arial,sans-serif;
+  font-size: 21px;
+  letter-spacing: .4px;
+  color: #2f2f2f;
+  margin-bottom: 9.6px;
+}
+
+.cat__subheading-section {
+  display: inline;
+  position: absolute;
+  text-align: center;
+}
+
 .sign_in_register {
   top: 55px;
   right: 160px;
@@ -210,3 +233,5 @@ li {
   text-transform: uppercase;
   font-family: "NOTHS Sans No2 Regular";
 }
+
+

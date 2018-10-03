@@ -1,19 +1,25 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
-import Header from "./components/header";
-import Navigation from "./components/navigation";
-import Image from "./components/homepageimage";
-
+import { ConnectedRouter } from "react-router-redux";
+import { Switch, Route } from "react-router-dom";
+import { history } from "./Redux/store";
+import HomePage from "./pages/homePage";
+import Register from "./pages/registerPage";
 
 // only for named exports
+//<Route path="/" component={HomePage} />
+//<ConnectedRouter history={history}>
+//</ConnectedRouter>
+
 
 class App extends React.Component {
   render() {
     return (
       <div id="container">
-        <Header />
-        <Navigation />
-        <Image />
+        <Switch>
+          <Route path="/register" component={Register} />
+          <Route path="/" component={HomePage} />
+        </Switch>
       </div>
     );
   }

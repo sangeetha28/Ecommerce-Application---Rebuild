@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import FavouritesIcon from './images/favourites.png';
-import ShoppingIcon from './images/shopping.png';
-import NothsLogo from './images/tag_logo_uk.png';
-import HomeOfThoughtfulStrap from './images/home_of_thoughtful_strapline_black.svg';
+import FavouritesIcon from '../images/favourites.png';
+import ShoppingIcon from '../images/shopping.png';
+import NothsLogo from '../images/tag_logo_uk.png';
+import HomeOfThoughtfulStrap from '../images/home_of_thoughtful_strapline_black.svg';
 import './styles.css';
 
 /* https://medium.com/a-beginners-guide-for-webpack-2/handling-images-e1a2a2c28f8d
