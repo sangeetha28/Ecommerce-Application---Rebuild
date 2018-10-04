@@ -140,6 +140,11 @@ export const Title = styled.div`
   padding: 2px 2px;
   margin-bottom: 10px;
   font-weight: 400px;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 18px;
+  letter-spacing: 0.9px;
+  font-family: "NOTHS Sans No2 Regular";
 `;
 
 export const CarousalTitle = styled.div`
@@ -213,8 +218,9 @@ export const Banner = styled.div`
 
 export const Container4 = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
-  height: 550px;
+  margin: 20px auto;
+  padding-top: 20px;
+  height: 600px;
   color: #000;
   text-align: center;
   justify-content; center;
@@ -238,6 +244,7 @@ export const BannerLink = styled.h1`
   color: #fff;
   justify-content: center;
   text-align: center;
+  text-transform: uppercase;
   border-radius: 3px;
   padding: 20px 10px;
   margin: 10px auto;
@@ -295,12 +302,14 @@ export const FooterDescription = styled.div`
   letter-spacing: 0.4px;
   margin-top: 20px;
   opacity: 0.7;
+  font-family: NOTHS Sans No3 Regular, Helvetica Neue, HelveticaNeue, Arial,
+    sans-serif;
 `;
 
 export const Border = styled.span`
-  border-bottom: solid 4px #eae8e6;
+  border-bottom: solid 3px #eae8e6;
   display: block;
-  margin: 20px auto;
+  margin: 50px auto;
 `;
 
 export const HeroSection = styled.div`

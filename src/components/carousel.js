@@ -3,6 +3,52 @@ import PropTypes from "prop-types";
 import Slider from "react-slick";
 import * as S from "./styles";
 
+const ArrowLeft = props => {
+  const { className, onClick } = props;
+  return (
+    <button
+      className={`${className} carousel__arrow carousel__arrow--left`}
+      onClick={onClick}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="32"
+        viewBox="0 0 18 32"
+      >
+        <path
+          fill="#0CA6D4"
+          fillRule="evenodd"
+          d="M0 2.007L14.01 16 0 29.993 1.981 32 18 16 1.981 0z"
+        />
+      </svg>
+    </button>
+  );
+};
+
+const ArrowRight = props => {
+  const { className, onClick } = props;
+  return (
+    <button
+      className={`${className} carousel__arrow carousel__arrow--right`}
+      onClick={onClick}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="32"
+        viewBox="0 0 18 32"
+      >
+        <path
+          fill="#0CA6D4"
+          fillRule="evenodd"
+          d="M0 2.007L14.01 16 0 29.993 1.981 32 18 16 1.981 0z"
+        />
+      </svg>
+    </button>
+  );
+};
+
 export default class Carousel extends PureComponent {
   render() {
     const { title, subTitle, cards } = this.props;

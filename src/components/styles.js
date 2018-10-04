@@ -15,6 +15,11 @@ export const CarousalTitle = styled.div`
   margin-bottom: 10px;
   font-weight: 100px;
   font-style: normal;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 18px;
+  letter-spacing: 0.9px;
+  font-family: "NOTHS Sans No2 Regular";
 `;
 
 export const CarousalCardTitle = styled.p`
@@ -43,7 +48,7 @@ export const CarousalCardContainer = styled.div`
     height: 323px;
   }
   cursor: pointer;
-  margin: 0 20px 20px;
+  margin: 20px 20px;
   &:hover {
     transform: scale3d(1.01, 1.01, 1);
     transition: all 0.3s;

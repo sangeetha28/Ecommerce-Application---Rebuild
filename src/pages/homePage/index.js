@@ -48,7 +48,7 @@ export default class Home extends PureComponent {
           >
             <S.Container1>
               <img src="http://cdn.notonthehighstreet.com/campaigns/images/homepage-2017/ttl-wk24-HeroStatic_desk.png" />
-              <S.BannerLink>SHOP BIRTHDAYS »</S.BannerLink>
+              <S.BannerLink>{page.hero.fields.bannerImageText}</S.BannerLink>
             </S.Container1>
           </S.MainBanner>
           <S.Container2>
