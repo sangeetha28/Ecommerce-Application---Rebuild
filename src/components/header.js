@@ -28,7 +28,7 @@ const Header = () => {
                 <a href="/user">register</a>
             </div>
             <div className="favourites_icon">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="5 0 90 90" class="gc-svg gc-header-favourites__svg gc-icon gc-icon--heart"><path d="M50 22.5 C 75 -10, 107.5 20, 82.5 47.5 L50 80 L17.5 47.5 C -7.5 20, 25 -10,50 22.5"></path></svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="5 0 90 90" className="gc-svg gc-header-favourites__svg gc-icon gc-icon--heart"><path d="M50 22.5 C 75 -10, 107.5 20, 82.5 47.5 L50 80 L17.5 47.5 C -7.5 20, 25 -10,50 22.5"></path></svg>
             </div>
             <div className="shopping_basket">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 100 125"><path d="M25 62 L25 52 C 20 -13, 80 -13, 75 52 L75 62"></path><path d="M10 42 L90 42 L98 110 C 99, 115, 98, 120, 90 122  L10 122 C 2 120, 1 115, 2 110 L10 42"></path></svg>

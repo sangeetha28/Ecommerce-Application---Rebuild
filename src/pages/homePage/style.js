@@ -11,9 +11,10 @@ export const Container1 = styled.div`
 export const Container2 = styled.div`
   margin: 0 auto;
   padding: 0 20px;
+  padding-bottom: 20px;
   max-width: 1200px;
   min-height: 520px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   box-sizing: border-box;
 `;
 
@@ -66,7 +67,7 @@ export const Homepage = styled.div`
   margin-bottom: 50px;
 `;
 
-export const GCFooterSubscribeTitle = styled.p`
+export const GCFooterSubscribeTitle = styled.h4`
   font-family: NOTHS2, Helvetica Neue, HelveticaNeue, Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -75,7 +76,7 @@ export const GCFooterSubscribeTitle = styled.p`
   padding-top: 40px;
 `;
 
-export const GCFooterSubscribeSubTitle = styled.p`
+export const GCFooterSubscribeSubTitle = styled.h5`
   margin-top: -10px;
   text-align: center;
 `;
@@ -194,13 +195,13 @@ img {
 }
 `;
 
-export const Banner = styled.image`
+export const Banner = styled.div`
   background-image: url('${props => props.bannerImage || ""}');
   background-size:initial;
   background-repeat: no-repeat;
   background-position: center;
   display: block;
-  margin: 80px auto;
+  margin: 80px auto 0;
   text-align: center;
   justify-content: center;
   min-height: 400px;
@@ -268,7 +269,7 @@ export const Container5 = styled.div`
   padding-bottom: -10px;
 `;
 
-export const FooterTitle = styled.p`
+export const FooterTitle = styled.div`
   font-family: "NOTHS Sans No2 SemiBold", "Helvetica Neue", HelveticaNeue, Arial,
     sans-serif;
   font-size: 20px;
@@ -285,7 +286,7 @@ export const FooterTitle = styled.p`
   min-height: 24px;
 `;
 
-export const FooterDescription = styled.p`
+export const FooterDescription = styled.div`
   margin: 0 auto;
   font-family: NOTHS Sans No3 Regular, Helvetica Neue, HelveticaNeue, Arial,
     sans-serif;
@@ -297,9 +298,9 @@ export const FooterDescription = styled.p`
 `;
 
 export const Border = styled.span`
-  border-bottom: solid 3px #eae8e6;
+  border-bottom: solid 4px #eae8e6;
   display: block;
-  margin: 50px auto;
+  margin: 20px auto;
 `;
 
 export const HeroSection = styled.div`
