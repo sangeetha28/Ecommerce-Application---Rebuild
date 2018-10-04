@@ -326,6 +326,10 @@ display: block;
   width: 335px;
 background-image: url('${props => props.background || ""}');
 background-repeat: no-repeat;
+cursor: pointer;
+&:hover{
+  filter: brightness(50%);
+}
 `;
 
 export const SmallImage = styled.div`
@@ -334,6 +338,10 @@ height: 165px;
 width: 165px;
 display: block;
 margin-left: 330px;
+cursor: pointer;
+&:hover{
+  filter: brightness(50%);
+}
 `;
 
 export const HeroDivider = styled.div`
