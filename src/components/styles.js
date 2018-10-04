@@ -5,7 +5,7 @@ export const Carousel = styled.div``;
 export const CarousalTitle = styled.div`
   font-family: "NOTHS Sans No2 SemiBold", "Helvetica Neue", HelveticaNeue, Arial,
     sans-serif;
-  font-size: 20px;
+  font-size: 21px;
   text-transform: uppercase;
   letter-spacing: 0.4px;
   color: #2f2f2f;
@@ -14,15 +14,19 @@ export const CarousalTitle = styled.div`
   padding: 2px 2px;
   margin-bottom: 10px;
   font-weight: 400px;
+  font-style: normal;
+  line-height: 30px;
 `;
+
 export const CarousalCardTitle = styled.p`
   text-transform: uppercase;
-    text-align: center;
-    font-size: 14px;
-    line-height: 20px;
-    color: #2f2f2f;
-    margin: 10px 0 12px;
-    letter-spacing: 0.8px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2f2f2f;
+  margin: 10px 0 12px;
+  letter-spacing: 0.8px;
+  font-family: "NOTHS Sans No3 Regular";
 `;
 
 export const CarousalCardContainer = styled.div`

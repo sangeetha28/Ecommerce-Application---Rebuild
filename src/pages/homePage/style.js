@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Container1 = styled.div`
-  margin: 0 auto 50px;
-  padding: 0 10px;
-  max-width: 1020px;
-  position: relative;
-  justify-content: centre;
+  position: absolute;
+  max-width: 840px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const Container2 = styled.div`
@@ -18,16 +18,21 @@ export const Container2 = styled.div`
 `;
 
 export const Container6 = styled.div`
-  width: 1424px;
+  width: 100%;
   height: 263px;
   background-color: #f4f6f6;
   color: #555;
+  position: relative;
 `;
 
 export const NewsLetterSubscribe = styled.div`
-  width: 100%;
-  height: 200px;
-  margin-top: 30px;
+  height: 220px;
+  width: 1044px;
+  top:40%;
+  left:50%
+  transform: translate(-50%, -50%);
+  position:absolute; 
+
 `;
 
 export const Container3 = styled.div`
@@ -37,18 +42,19 @@ export const Container3 = styled.div`
 
 export const GCFormPrivacyPolicy = styled.p`
   font-size: 12px;
-  font-family: NOTHS2, Helvetica Neue, HelveticaNeue, Arial, sans-serif;
+  display: block;
+  font-family: NOTHS Sans No2 SemiBold, Helvetica Neue, HelveticaNeue, Arial, sans-serif;
   letter-spacing: 0.4px;
   justify-content: center;
-  margin-left: 430px;
-  margin-top: 10px;
   color: #555;
+  position: absolute;
+  top: 100%;
+  left: 20%
+
   background: transparent;
   font-size: 11px;
   color: #434343;
-  margin-top: 20px;
   opacity: 0.5;
-
   a {
     text-decoration: underline;
   }
@@ -75,7 +81,7 @@ export const GCFooterSubscribeSubTitle = styled.p`
 `;
 
 export const GCFormFieldInput = styled.input`
-  height: 51px;
+  height: 100%;
   width: 383.83px;
   text-align: center;
   justify-content: center;
@@ -84,16 +90,22 @@ export const GCFormFieldInput = styled.input`
   border-radius: 3px;
   line-height: 38px;
   font-size: 15px;
-  margin-left: 430px;
   color: #434343;
   text-align: left;
   padding-left: 20px;
   letter-spacing: normal;
   opacity: 0.7;
 `;
+export const GCInputContainer = styled.div`
+  top: 65%;
+  left: 20%;
+  height: 51px
+  position: absolute;
+  width: 700px;
+`;
 
 export const GCFormFieldSubscribeButton = styled.button`
-  height: 51px;
+  height: 100%;
   width: 196px;
   text-align: center;
   justify-content: center;
@@ -103,10 +115,7 @@ export const GCFormFieldSubscribeButton = styled.button`
   font-size: 15px;
   background: #09b8ec;
   background-repeat: no-repeat;
-  border-radius: 3px;
   border: none;
-  padding: 11px 20px 9px;
-  margin-left: 10px;
   font-size: 12px;
   line-height: 18px;
   cursor: pointer;
@@ -115,6 +124,7 @@ export const GCFormFieldSubscribeButton = styled.button`
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.6px;
+  margin-left: 20px;
 `;
 
 export const Title = styled.div`
@@ -142,7 +152,7 @@ export const CarousalTitle = styled.div`
   margin-top: 350px;
   padding: 2px 2px;
   margin-bottom: 10px;
-  font-weight: 100px;
+  font-weight: 300px;
 `;
 
 export const SubTitle = styled.div`
@@ -170,29 +180,18 @@ export const CarousalSubTitle = styled.div`
 `;
 
 export const MainBanner = styled.div`
-  @media(min-width: 768px) {
-    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('${props =>
-      props.imageDesktop || ""}');
-    background-repeat:no-repeat;
-    background-size: initial;
-    max-height: 170px;
-  }
-  background-image: url('${props => props.imageMobile || ""}');
-  background-size: cover;
-  max-height: 100px;
-  background-position: center;
-  color: #ffffff;
-  text-align: center;
-  padding: 80px 10px;
-  margin-bottom: 30px;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    max-width: 770px;
-    width: 100%;
-  }
+@media(min-width: 768px) 
+{
+  background-image: url('${props => props.imageDesktop || ""}');
+  background-size: initial;
+  min-height: 550px;
+}
+position: relative;
+opacity: 1.5;
+img {
+  max-width: 770px;
+  width: 100%;
+}
 `;
 
 export const Banner = styled.image`
@@ -200,9 +199,8 @@ export const Banner = styled.image`
   background-size:initial;
   background-repeat: no-repeat;
   background-position: center;
-  max-width: 1000px;
   display: block;
-  margin: 60px auto;
+  margin: 80px auto;
   text-align: center;
   justify-content: center;
   min-height: 400px;
@@ -238,12 +236,14 @@ export const BannerLink = styled.h1`
   background-color: ${props => props.color || "#f25b60"};
   color: #fff;
   justify-content: center;
+  text-align: center;
   border-radius: 3px;
   padding: 20px 10px;
-  margin: 15px auto 20px;
+  margin: 10px auto;
   font-size: 15px;
   line-height: 18px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.9px;
+  font-family: "NOTHS Sans No2 Regular";
 `;
 
 export const CarouselWrap = styled.div`
@@ -348,25 +348,23 @@ export const Container8 = styled.div`
   margin-top: -60px;
   font-family: "NOTHS Sans No2 SemiBold", "Helvetica Neue", HelveticaNeue, Arial,
     sans-serif;
-    padding-top: 20px;
-  font-size: 15px;
-  margin-top: -20px;  
+  padding-top: 20px;
+  font-size: 13px;
+  margin-top: -20px;
   p {
-  margin-left: 300px;
-  opacity: 0.7;
+    margin-left: 300px;
+    opacity: 0.7;
   }
   letter-spacing: 0.4px;
   color: #2f2f2f;
-
-  
 `;
 
 export const FooterContainer = styled.div`
   float: left;
   padding: 100px;
-  margin-left:60px;
+  margin-left: 60px;
   li {
-    list-style: none;  
+    list-style: none;
   }
 `;
 
