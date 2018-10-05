@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import Slider from "react-slick";
 import * as S from "./styles";
 
-const ArrowLeft = () => {
+const ArrowLeft = props => {
+  const { onClick } = props;
   return (
-    <S.ArrowLeftButton>
+    <S.ArrowLeftButton onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"
@@ -13,7 +14,7 @@ const ArrowLeft = () => {
         viewBox="0 0 18 32"
       >
         <path
-          fill="#0CA6D4"
+          fill="grey"
           fillRule="evenodd"
           d="M0 2.007L14.01 16 0 29.993 1.981 32 18 16 1.981 0z"
         />
@@ -23,8 +24,9 @@ const ArrowLeft = () => {
 };
 
 const ArrowRight = props => {
+  const { onClick } = props;
   return (
-    <S.ArrowRightButton>
+    <S.ArrowRightButton onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"
@@ -32,7 +34,7 @@ const ArrowRight = props => {
         viewBox="0 0 18 32"
       >
         <path
-          fill="#0CA6D4"
+          fill="grey"
           fillRule="evenodd"
           d="M0 2.007L14.01 16 0 29.993 1.981 32 18 16 1.981 0z"
         />
@@ -43,11 +45,12 @@ const ArrowRight = props => {
 
 export default class Carousel extends PureComponent {
   render() {
-    const { title, subTitle, cards } = this.props;
+    const { title, subTitle, cards, cardsToDisplay } = this.props;
     const settings = {
       dots: false,
       infinite: false,
-      slidesToShow: this.props.cardsDisplay,
+      speed: 500,
+      slidesToShow: cardsToDisplay,
       slidesToScroll: 1,
       nextArrow: <ArrowRight />,
       prevArrow: <ArrowLeft />
@@ -61,10 +64,12 @@ export default class Carousel extends PureComponent {
           <Slider {...settings}>
             {cards.map((card, index) => {
               return (
-                <S.CarousalCardContainer key={index}>
-                  <img src={card.imageLink} />
-                  <S.CarousalCardTitle>{card.title}</S.CarousalCardTitle>
-                </S.CarousalCardContainer>
+                <div>
+                  <a className="product__link" href={card.link}>
+                    <img className="carousal_image" src={card.imageLink} />
+                    <S.CarousalCardTitle>{card.title}</S.CarousalCardTitle>
+                  </a>
+                </div>
               );
             })}
           </Slider>

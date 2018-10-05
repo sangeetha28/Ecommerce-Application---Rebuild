@@ -189,7 +189,7 @@ export const MainBanner = styled.div`
 @media(min-width: 768px) 
 {
   background-image: url('${props => props.imageDesktop || ""}');
-  background-size: initial;
+  background-size: cover;
   min-height: 550px;
 }
 position: relative;
