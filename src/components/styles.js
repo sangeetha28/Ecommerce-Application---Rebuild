@@ -22,6 +22,25 @@ export const CarousalTitle = styled.div`
   font-family: "NOTHS Sans No2 Regular";
 `;
 
+export const ArrowRightButton = styled.button`
+  display: block;
+  width: 30px;
+  height: 42px;
+  background: none;
+  right: -30px !important;
+`;
+
+export const ArrowLeftButton = styled.button`
+  display: block;
+  width: 30px;
+  height: 42px;
+  background: none;
+  left: -30px !important;
+  svg {
+    transform: rotate(180deg);
+  }
+`;
+
 export const CarousalCardTitle = styled.p`
   text-transform: uppercase;
   text-align: center;
@@ -40,7 +59,7 @@ export const CarousalCardTitle = styled.p`
 `;
 
 export const CarousalCardContainer = styled.div`
-  float: left;
+  display: block;
   width: 350px;
   height: 350px;
   img {
