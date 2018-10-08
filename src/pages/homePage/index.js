@@ -6,6 +6,7 @@ import * as contentful from "contentful";
 import CuratedCollection from "../../components/curatedCollection";
 import * as S from "./style";
 import Carousel from "../../components/carousel";
+import SimpleSlider from "../../components/slider";
 
 import { connect } from "react-redux";
 //Pure Component - Performance-optimized version of React.Component. Doesn’t rerender if props/state hasn’t changed.
@@ -80,6 +81,7 @@ export default class Home extends PureComponent {
               title={page.carousalThree.fields.title}
               subTitle={page.carousalThree.fields.subTitle}
               cards={page.carousalThree.fields.json.carousal}
+              cardsToDisplay="4"
             />
           </S.Container2>
           <S.Container4>

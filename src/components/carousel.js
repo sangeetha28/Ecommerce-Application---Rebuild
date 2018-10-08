@@ -4,12 +4,9 @@ import Slider from "react-slick";
 import * as S from "./styles";
 
 const ArrowLeft = props => {
-  const { className, onClick } = props;
+  const { onClick } = props;
   return (
-    <button
-      className={`${className} carousel__arrow carousel__arrow--left`}
-      onClick={onClick}
-    >
+    <S.ArrowLeftButton onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"
@@ -17,22 +14,19 @@ const ArrowLeft = props => {
         viewBox="0 0 18 32"
       >
         <path
-          fill="#0CA6D4"
+          fill="grey"
           fillRule="evenodd"
           d="M0 2.007L14.01 16 0 29.993 1.981 32 18 16 1.981 0z"
         />
       </svg>
-    </button>
+    </S.ArrowLeftButton>
   );
 };
 
 const ArrowRight = props => {
-  const { className, onClick } = props;
+  const { onClick } = props;
   return (
-    <button
-      className={`${className} carousel__arrow carousel__arrow--right`}
-      onClick={onClick}
-    >
+    <S.ArrowRightButton onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"
@@ -40,23 +34,26 @@ const ArrowRight = props => {
         viewBox="0 0 18 32"
       >
         <path
-          fill="#0CA6D4"
+          fill="grey"
           fillRule="evenodd"
           d="M0 2.007L14.01 16 0 29.993 1.981 32 18 16 1.981 0z"
         />
       </svg>
-    </button>
+    </S.ArrowRightButton>
   );
 };
 
 export default class Carousel extends PureComponent {
   render() {
-    const { title, subTitle, cards } = this.props;
+    const { title, subTitle, cards, cardsToDisplay } = this.props;
     const settings = {
       dots: false,
       infinite: false,
-      slidesToShow: this.props.cardsDisplay,
-      slidesToScroll: 1
+      speed: 500,
+      slidesToShow: cardsToDisplay,
+      slidesToScroll: 1,
+      nextArrow: <ArrowRight />,
+      prevArrow: <ArrowLeft />
     };
 
     return (
@@ -64,41 +61,24 @@ export default class Carousel extends PureComponent {
         <S.CarousalTitle>{title}</S.CarousalTitle>
         <S.CarousalSubTitle>{subTitle}</S.CarousalSubTitle>
         <S.CarouselContainer>
-          {cards.map((card, index) => {
-            return (
-              <S.CarousalCardContainer key={index}>
-                <img src={card.imageLink} />
-                <S.CarousalCardTitle>{card.title}</S.CarousalCardTitle>
-              </S.CarousalCardContainer>
-            );
-          })}
+          <Slider {...settings}>
+            {cards.map((card, index) => {
+              return (
+                <div>
+                  <a className="product__link" href={card.link}>
+                    <img className="carousal_image" src={card.imageLink} />
+                    <S.CarousalCardTitle>{card.title}</S.CarousalCardTitle>
+                  </a>
+                </div>
+              );
+            })}
+          </Slider>
         </S.CarouselContainer>
       </S.Carousel>
     );
   }
 }
 
-// {cards.map((card, index) => {
-//   return (
-//     <S.CarousalCardContainer>
-//       <img src={card.fields.imageFile.fields.file.url} />
-//       <S.CarousalCardTitle>{card.fields.title}</S.CarousalCardTitle>
-//     </S.CarousalCardContainer>
-//   );
-// })}
-
-{
-  /* <img src="./normal_large-linen-cushion-by-ruth-holly-paper-home.jpg" />
-<S.CarousalCardTitle>HOME IDEAS WITH FREE MAINLAND UK DELIVERY</S.CarousalCardTitle>
-</S.CarousalCardContainer>
-<S.CarousalCardContainer>
- <img src='./normal_personalised-name-necklace.jpg' />
-<S.CarousalCardTitle>BEST JEWELLERY FOR HER</S.CarousalCardTitle>
-</S.CarousalCardContainer>
-<S.CarousalCardContainer>
- <img src='./normal_personalised-baby-halloween-pumpkin-leggings.jpg' />
-<S.CarousalCardTitle>TOP HALLOWEEN PICKS</S.CarousalCardTitle> */
-}
 Carousel.defaultProps = {
   title: "",
   subTitle: "",
