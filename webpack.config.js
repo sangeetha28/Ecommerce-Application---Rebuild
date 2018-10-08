@@ -1,7 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer");
 
 module.exports = {
   entry: "./src/index.js",
@@ -59,11 +60,11 @@ module.exports = {
     port: 3000,
     publicPath: "http://localhost:3000/dist",
     hotOnly: true,
-    historyApiFallback: true,
+    historyApiFallback: true
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
-    // will generate index html in the dist folder
+     // will generate index html in the dist folder
     // new HtmlWebpackPlugin({
     //   filename: "index.html",
     //   template: "./public/index.html"
