@@ -1,31 +1,5 @@
 import styled from "styled-components";
 
-export const Container1 = styled.div`
-  position: absolute;
-  max-width: 840px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-
-export const Container2 = styled.div`
-  margin: 0 auto;
-  padding: 0 20px;
-  padding-bottom: 20px;
-  max-width: 1200px;
-  min-height: 520px;
-  margin-bottom: 60px;
-  box-sizing: border-box;
-`;
-
-export const Container6 = styled.div`
-  width: 100%;
-  height: 263px;
-  background-color: #f4f6f6;
-  color: #555;
-  position: relative;
-`;
-
 export const NewsLetterSubscribe = styled.div`
   height: 220px;
   width: 1044px;
@@ -34,11 +8,6 @@ export const NewsLetterSubscribe = styled.div`
   transform: translate(-50%, -50%);
   position:absolute; 
 
-`;
-
-export const Container3 = styled.div`
-  margin: 100px auto 0;
-  max-width: 800px;
 `;
 
 export const GCFormPrivacyPolicy = styled.p`
@@ -63,8 +32,9 @@ export const GCFormPrivacyPolicy = styled.p`
 
 export const Homepage = styled.div`
   width: 100%;
-  margin-top: -8px;
+  margin-top: -18px;
   margin-bottom: 50px;
+  overflow: hidden;
 `;
 
 export const GCFooterSubscribeTitle = styled.h4`
@@ -147,6 +117,17 @@ export const Title = styled.div`
   font-family: "NOTHS Sans No2 Regular";
 `;
 
+export const CarouselWrap = styled.div`
+  @media (min-width: 769px) {
+    margin: 10px -40px;
+  }
+
+  margin: 30px 10px 30px 0;
+  border-right: none;
+  border-left: none;
+  padding: 10px 0;
+`;
+
 export const CarousalTitle = styled.div`
   font-family: "NOTHS Sans No2 SemiBold", "Helvetica Neue", HelveticaNeue, Arial,
     sans-serif;
@@ -185,57 +166,57 @@ export const CarousalSubTitle = styled.div`
   margin-bottom: 40px;
 `;
 
-export const MainBanner = styled.div`
-@media(min-width: 768px) 
+export const Container = styled.div`
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 1020px;
+  font-family: NOTHS Sans No3 Regular, Helvetica Neue, HelveticaNeue, Arial,
+  sans-serif;
+`;
+
 {
-  background-image: url('${props => props.imageDesktop || ""}');
+  /* <p>A Flexible Layout must have a parent element with the <em>display</em> property set to <em>flex</em>.</p>
+
+<p>Direct child elements(s) of the flexible container automatically becomes flexible items.</p> */
+}
+
+export const MainBanner = styled.div`
+  @media(min-width: 768px) {
+    background-image: url('${props => props.imageDesktop || ""}');
+    max-height: 550px;
+    background-repeat: no-repeat;
+  }
+  background-image: url('${props => props.imageMobile || ""}');
   background-size: cover;
-  min-height: 550px;
-}
-position: relative;
-opacity: 1.5;
-img {
-  max-width: 770px;
-  width: 100%;
-}
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 10px;
+  margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 770px;
+    width: 100%;
+  }
 `;
 
 export const Banner = styled.div`
-  background-image: url('${props => props.bannerImage || ""}');
-  background-size:initial;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: block;
-  margin: 80px auto 0;
-  text-align: center;
-  justify-content: center;
-  min-height: 400px;
-  img {
-    width: 100%;
-    padding-top: 50px;
-  }
-`;
+background-image: url('${props => props.bannerImage || ""}');
+background-size: initial;
+background-repeat: no-repeat;
+background-position: center;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 50px 0 20px;
 
-export const Container4 = styled.div`
-  max-width: 1200px;
-  margin: 20px auto;
-  padding-top: 20px;
-  height: 600px;
-  color: #000;
-  text-align: center;
-  justify-content; center;
-  h4 {
-    font-family: "NOTHS Sans No2 SemiBold", "Helvetica Neue", HelveticaNeue,
-      Arial, sans-serif;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    color: #2f2f2f;
-  }
-  p {
-    font-size: 17px;
-    line-height: 18px;
-  }
+img {
+  width: 100%;
+}
 `;
 
 export const BannerLink = styled.h1`
@@ -245,24 +226,15 @@ export const BannerLink = styled.h1`
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
+  box-sizing: border-box;
+  padding-bottm: 20px;
   border-radius: 3px;
   padding: 20px 10px;
-  margin: 10px auto;
+  margin: 0px auto;
   font-size: 15px;
   line-height: 18px;
   letter-spacing: 0.9px;
   font-family: "NOTHS Sans No2 Regular";
-`;
-
-export const CarouselWrap = styled.div`
-  @media (min-width: 769px) {
-    margin-top: 90px;
-  }
-
-  margin: 30px -10px 30px 0;
-  border-right: none;
-  border-left: none;
-  padding: 30px 0;
 `;
 
 export const Container5 = styled.div`
@@ -307,75 +279,69 @@ export const FooterDescription = styled.div`
 `;
 
 export const Border = styled.span`
-  border-bottom: solid 3px #eae8e6;
-  display: block;
-  margin: 50px auto;
+@media(min-width: 768px) {
+  margin: 30px auto;
+}
+border-bottom: solid 3px #eae8e6;
+display: block;
+margin: 10px auto;
+
 `;
 
 export const HeroSection = styled.div`
-  height: 440px;
-  width: 550px;
+@media(min-width: 768px) {
+  width: 48%;
+  margin: 60px 7px;
+}
+  align-items: stretch;
+  margin: 20px 7px;
+  width: 100%;
+  height: 100%;
   float: left;
-  margin: 0 20px;
-  box-sizing: border-box;
-  padding: 0 12px 0 0;
-  position: relative;
 `;
 
 export const HeroColumn = styled.div`
-  position: absolute;
-  width: 50%;
-  height: 100%;
+@media(min-width: 768px) {
+  width: 67.7%;
+}
+  width: 100%;
+  height: auto;
+  overflow: hidden;
   float: left;
-  align-items: strech;
 `;
 
 export const LargeImage = styled.a`
-display: block;
-  height: 335px;
-  width: 335px;
-background-image: url('${props => props.background || ""}');
-background-repeat: no-repeat;
-cursor: pointer;
-&:hover{
-  filter: brightness(50%);
-}
-`;
-
-export const SmallImage = styled.div`
-background-image: url('${props => props.background || ""}');
-height: 165px;
-width: 165px;
-display: block;
-margin-left: 330px;
-cursor: pointer;
-&:hover{
-  filter: brightness(50%);
-}
+  display: block;
+  width: 100%;
+  height: 331px;
+  background: #000;
+  background-image: url('${props => props.background || ""}');
 `;
 
 export const HeroDivider = styled.div`
-  position: absolute;
-  width: 50%;
-  height: 50%;
+@media(min-width: 768px) {
   display: block;
+  margin-left: 1px;
+  width: 32%;
+  float: right;
+}
+  
 `;
 
-export const Container8 = styled.div`
-  max-width: 960;
-  margin-top: -60px;
-  font-family: "NOTHS Sans No2 SemiBold", "Helvetica Neue", HelveticaNeue, Arial,
-    sans-serif;
-  padding-top: 20px;
-  font-size: 13px;
-  margin-top: -20px;
-  p {
-    margin-left: 300px;
-    opacity: 0.7;
+export const SmallImage = styled.a`
+@media(min-width: 768px) {
+  display: block;
+  background: #ccc;
+  background-image: url('${props => props.background || ""}');
+  width: 100%;
+  height: 165px;
+
+  + a {
+    margin-top: 1px;
   }
-  letter-spacing: 0.4px;
-  color: #2f2f2f;
+}
 `;
+
 
 export const FooterContainer = styled.div`
   float: left;
