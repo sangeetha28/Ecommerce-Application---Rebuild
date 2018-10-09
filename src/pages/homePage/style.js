@@ -34,7 +34,6 @@ export const Homepage = styled.div`
   width: 100%;
   margin-top: -18px;
   margin-bottom: 50px;
-  overflow: hidden;
 `;
 
 export const GCFooterSubscribeTitle = styled.h4`
