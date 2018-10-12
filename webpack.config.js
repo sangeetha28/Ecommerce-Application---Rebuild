@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: "./src/index.js",
@@ -63,11 +63,16 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
      // will generate index html in the dist folder
     // new HtmlWebpackPlugin({
     //   filename: "index.html",
     //   template: "./public/index.html"
     // })
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disable',
+      generateStatsFile: true,
+      statsOptions: { source: false }
+    }),
   ]
 };

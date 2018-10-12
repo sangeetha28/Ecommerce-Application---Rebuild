@@ -2,7 +2,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode-development",
     "build": "webpack --mode production",
-    "stats": "webpack-bundle-analyzer dist/stats.json"
+    "bundle-report": "webpack-bundle-analyzer --port 4200 dist/stats.json"
   },
   "devDependencies": {
     "and": "0.0.3",

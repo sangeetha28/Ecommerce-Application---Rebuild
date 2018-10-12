@@ -114,6 +114,13 @@ export const CarouselContainer = styled.div`
   width: 1140px;
   height: 450px;
   cursor: pointer;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+    min-height: fit-content;
+    margin: 0;
+  }
 `;
 
 export const CarousalSubTitle = styled.div`
