@@ -40,6 +40,8 @@ export default class Home extends PureComponent {
     if (!page) return null; // DO NOT UNDERSTAND THIS LINE
     return (
       <div>
+        <Header />
+        <Navigation />
         <S.Homepage>
           <S.MainBanner
             imageDesktop={page.hero.fields.bannerImageLink}
@@ -87,48 +89,48 @@ export default class Home extends PureComponent {
 
             <S.Border />
             <S.Container>
-            <S.Title>MEET THE MAKERS</S.Title>
-            <S.SubTitle>The talented artisians behind your gifts</S.SubTitle>
-            <S.HeroSection>
-              <S.HeroColumn>
-                <S.LargeImage
-                  background={page.heroAreaone[0].fields.imageUrl}
-                />
-              </S.HeroColumn>
-              <S.HeroDivider>
-                <S.SmallImage
-                  background={page.heroAreaone[1].fields.imageUrl}
-                />
-                <S.SmallImage
-                  background={page.heroAreaone[2].fields.imageUrl}
-                />
-              </S.HeroDivider>
-              <S.CarousalTitle>SEVEN SEVENTEEN </S.CarousalTitle>
-              <S.CarousalSubTitle>
-                {" "}
-                Natural, mood-boosting candles
-              </S.CarousalSubTitle>
-            </S.HeroSection>
-            <S.HeroSection>
-              <S.HeroColumn>
-                <S.LargeImage
-                  background={page.heroareatwo[0].fields.imageUrl}
-                />
-              </S.HeroColumn>
-              <S.HeroDivider>
-                <S.SmallImage
-                  background={page.heroareatwo[1].fields.imageUrl}
-                />
-                <S.SmallImage
-                  background={page.heroareatwo[2].fields.imageUrl}
-                />
-              </S.HeroDivider>
-              <S.CarousalTitle> THE FOREST & CO </S.CarousalTitle>
-              <S.CarousalSubTitle>
-                {" "}
-                Beautifully unique homeware{" "}
-              </S.CarousalSubTitle>
-            </S.HeroSection>
+              <S.Title>MEET THE MAKERS</S.Title>
+              <S.SubTitle>The talented artisians behind your gifts</S.SubTitle>
+              <S.HeroSection>
+                <S.HeroColumn>
+                  <S.LargeImage
+                    background={page.heroAreaone[0].fields.imageUrl}
+                  />
+                </S.HeroColumn>
+                <S.HeroDivider>
+                  <S.SmallImage
+                    background={page.heroAreaone[1].fields.imageUrl}
+                  />
+                  <S.SmallImage
+                    background={page.heroAreaone[2].fields.imageUrl}
+                  />
+                </S.HeroDivider>
+                <S.CarousalTitle>SEVEN SEVENTEEN </S.CarousalTitle>
+                <S.CarousalSubTitle>
+                  {" "}
+                  Natural, mood-boosting candles
+                </S.CarousalSubTitle>
+              </S.HeroSection>
+              <S.HeroSection>
+                <S.HeroColumn>
+                  <S.LargeImage
+                    background={page.heroareatwo[0].fields.imageUrl}
+                  />
+                </S.HeroColumn>
+                <S.HeroDivider>
+                  <S.SmallImage
+                    background={page.heroareatwo[1].fields.imageUrl}
+                  />
+                  <S.SmallImage
+                    background={page.heroareatwo[2].fields.imageUrl}
+                  />
+                </S.HeroDivider>
+                <S.CarousalTitle> THE FOREST & CO </S.CarousalTitle>
+                <S.CarousalSubTitle>
+                  {" "}
+                  Beautifully unique homeware{" "}
+                </S.CarousalSubTitle>
+              </S.HeroSection>
             </S.Container>
             <S.Border />
             <S.FooterTitle>
