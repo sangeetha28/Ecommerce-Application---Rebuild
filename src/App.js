@@ -11,7 +11,6 @@ import Register from "./pages/registerPage";
 //<ConnectedRouter history={history}>
 //</ConnectedRouter>
 
-
 class App extends React.Component {
   render() {
     return (

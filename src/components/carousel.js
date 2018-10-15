@@ -64,9 +64,9 @@ export default class Carousel extends PureComponent {
           <Slider {...settings}>
             {cards.map((card, index) => {
               return (
-                <div>
-                  <a className="product__link" href={card.link}>
-                    <img className="carousal_image" src={card.imageLink} />
+                <div key={index}>
+                  <a className="product__link" href={card.image}>
+                    <img className="carousal_image" src={card.image} />
                     <S.CarousalCardTitle>{card.title}</S.CarousalCardTitle>
                   </a>
                 </div>

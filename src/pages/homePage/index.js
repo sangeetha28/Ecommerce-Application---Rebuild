@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import Header from "../../components/header";
 import Navigation from "../../components/navigation";
 import Image from "../../components/homepageimage";
-import * as contentful from "contentful";
+import contentstack from "contentstack/react-native";
 import CuratedCollection from "../../components/curatedCollection";
 import * as S from "./style";
 import Carousel from "../../components/carousel";
@@ -19,19 +19,36 @@ export default class Home extends PureComponent {
     };
   }
 
-  client = contentful.createClient({
-    space: "6pzvje8n0hm6",
-    accessToken:
-      "d715557b55ca0a5c942ce8fe6c05447e87aa14d3a4098c2c347682a3a0c0a829"
-  });
-  fetchResponse = () => this.client.getEntry("58APqj0PpmUoikogCAwWiu");
+  // client = contentful.createClient({
+  //   space: "6pzvje8n0hm6",
+  //   accessToken:
+  //     "d715557b55ca0a5c942ce8fe6c05447e87aa14d3a4098c2c347682a3a0c0a829"
+  // });
+  // fetchResponse = () => this.client.getEntry("58APqj0PpmUoikogCAwWiu");
+  // setResponse = response => {
+  //   console.log("RESPONSE", response.fields);
+  //   this.setState({ page: response.fields });
+  // };
+
+  // Initialize the SDK
+  stack = contentstack.Stack(
+    "blt67c6575faff34f93",
+    "blt2a1a928c189ebada",
+    "homepage"
+  );
+
+  //Query Content from your Stack....
+  query = this.stack.ContentType("homepage").Entry("bltca5a43ba7e6c2643");
+
+  fetchResponse = () => this.query.fetch();
+
   setResponse = response => {
-    console.log("RESPONSE", response.fields);
-    this.setState({ page: response.fields });
+    console.log("Response now is....", response);
+    this.setState({ page: response });
   };
 
   componentDidMount() {
-    this.fetchResponse().then(result => this.setResponse(result));
+    this.fetchResponse().then(response => this.setResponse(response.toJSON()));
   }
 
   //
@@ -44,23 +61,23 @@ export default class Home extends PureComponent {
         <Navigation />
         <S.Homepage>
           <S.MainBanner
-            imageDesktop={page.hero.fields.bannerImageLink}
-            imageMobile={page.hero.fields.bannerImageLink}
+            imageDesktop={page.main_banner.banner_image_desktop_tablet}
+            imageMobile={page.main_banner.banner_image_mobile}
           >
             <S.Container1>
               <img src="http://cdn.notonthehighstreet.com/campaigns/images/homepage-2017/ttl-wk24-HeroStatic_desk.png" />
-              <S.BannerLink>{page.hero.fields.bannerImageText}</S.BannerLink>
+              <S.BannerLink>{page.main_banner.button_text}</S.BannerLink>
             </S.Container1>
           </S.MainBanner>
           <S.Container2>
             <S.Border />
             <Carousel
-              title={page.carousalOne.fields.title}
-              subTitle={page.carousalOne.fields.subTitle}
-              cards={page.carousalOne.fields.json.carousal}
+              title={page.carousal.title}
+              subTitle={page.carousal.sub_title}
+              cards={page.carousal.products.carousal_1}
             />
           </S.Container2>
-          <S.Banner bannerImage={page.banner.fields.bannerLinkImage}>
+          <S.Banner bannerImage={page.banner.button_link}>
             <S.Container3>
               <img src="http://cdn.notonthehighstreet.com/campaigns/images/homepage-2017/ttl-17Sept_Midi_Desktop-compressor.png" />
               <S.BannerLink color="#3a4687">
@@ -70,56 +87,57 @@ export default class Home extends PureComponent {
           </S.Banner>
           <S.Container2>
             <Carousel
-              title={page.carousalTwo.fields.title}
-              subTitle={page.carousalTwo.fields.subTitle}
-              cards={page.carousalTwo.fields.json.carousal}
+              title={page.carousal_2.heading}
+              subTitle={page.carousal_2.sub_heading}
+              cards={page.carousal_2.products.carousal_2}
             />
           </S.Container2>
           <S.Container2>
             <S.Border />
             <Carousel
-              title={page.carousalThree.fields.title}
-              subTitle={page.carousalThree.fields.subTitle}
-              cards={page.carousalThree.fields.json.carousal}
-              cardsToDisplay="4"
+              title={page.carousal_3.heading}
+              subTitle={page.carousal_3.sub_heading}
+              cards={page.carousal_3.products.carousal_3}
+              cardsToDisplay={4}
             />
           </S.Container2>
           <S.Container4>
             <S.Border />
-            <S.Title>MEET THE MAKERS</S.Title>
-            <S.SubTitle>The talented artisians behind your gifts</S.SubTitle>
+            <S.Title>{page.partner_section.heading}</S.Title>
+            <S.SubTitle>{page.partner_section.sub_heading}</S.SubTitle>
             <S.HeroSection>
               <S.HeroColumn>
                 <S.LargeImage
-                  background={page.heroAreaone[0].fields.imageUrl}
+                  background={page.partner_section.block[0].largeimage}
                 />
               </S.HeroColumn>
               <S.HeroDivider>
                 <S.SmallImage
-                  background={page.heroAreaone[1].fields.imageUrl}
+                  background={page.partner_section.block[0].smalltopimage}
                 />
                 <S.SmallImage
-                  background={page.heroAreaone[2].fields.imageUrl}
+                  background={page.partner_section.block[0].smallbottomimage}
                 />
               </S.HeroDivider>
-              <S.CarousalTitle>SEVEN SEVENTEEN </S.CarousalTitle>
+              <S.CarousalTitle>
+                {page.partner_section.block[0].title}{" "}
+              </S.CarousalTitle>
               <S.CarousalSubTitle>
-                {" "}
-                Natural, mood-boosting candles
+                {page.partner_section.block[0].sub_title}
               </S.CarousalSubTitle>
             </S.HeroSection>
             <S.HeroSection>
               <S.HeroColumn>
                 <S.LargeImage
-                  background={page.heroareatwo[0].fields.imageUrl}
+                  background={page.partner_section.block[1].largeimage}
                 />
               </S.HeroColumn>
               <S.HeroDivider>
                 <S.SmallImage
-                  background={page.heroareatwo[1].fields.imageUrl}
+                  background={page.partner_section.block[1].smalltopimage}
                 />
                 <S.SmallImage
-                  background={page.heroareatwo[2].fields.imageUrl}
+                  background={page.partner_section.block[1].smallbottomimage}
                 />
               </S.HeroDivider>
               <S.CarousalTitle> THE FOREST & CO </S.CarousalTitle>
@@ -129,36 +147,11 @@ export default class Home extends PureComponent {
               </S.CarousalSubTitle>
             </S.HeroSection>
           </S.Container4>
-
           <S.Container5>
             <S.Border />
-            <S.FooterTitle>
-              THOUGHTFUL GIFTS, MADE FOR YOUR FAVOURITES
-            </S.FooterTitle>
+            <S.FooterTitle>{page.page_information.title}</S.FooterTitle>
             <S.FooterDescription>
-              <p>
-                When your mission is to find a gift for someone you love, ours
-                is to make sure it’s the most thoughtful, heartfelt and original
-                one going.
-              </p>
-              <p>
-                That’s why we’ve scoured the nation to bring together
-                beautifully made designs from thousands of the UK’s best small
-                creative businesses - from handcrafted creations to personalised
-                gift ideas brought to life with your own words.
-              </p>
-              <p>
-                So go ahead and discover our curated collections of birthday
-                gifts, wedding gifts, anniversary gifts, christening gifts,
-                Mother’s Day gifts, Father’s Day gifts *deep breath*,
-                housewarming, retirement and Christmas gifts - the list goes on.
-              </p>
-              <p>
-                And because we believe thoughtful should be for every day,
-                you’ll also find creative ways to say “I love you”, “I’m
-                thinking of you” and “I’m treating you, just because”. Prepare
-                to be inspired.
-              </p>
+              {page.page_information.description}
             </S.FooterDescription>
           </S.Container5>
           <S.Container6>
@@ -199,7 +192,7 @@ export default class Home extends PureComponent {
           </S.Container6>
           <S.Container8>
             <p>Copyright © 2006–2018 Notonthehighstreet Enterprises Limited</p>
-          </S.Container8>
+          </S.Container8>{" "}
         </S.Homepage>
       </div>
     );

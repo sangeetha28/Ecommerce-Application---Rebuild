@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "contentful": "^7.0.4",
+    "contentstack": "^3.4.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.3",
     "ng": "0.0.0",
